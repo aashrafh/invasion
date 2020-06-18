@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-
+import Canvas from "./components/Canvas";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h>{this.props.message}</h>
+        <Canvas />
       </div>
     );
   }

@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import createStore from "redux";
-import Provider from "react-redux";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 import "./index.css";
 import Game from "./../src/containers/Game";
 import reducer from "./reducers/index";
@@ -13,7 +13,7 @@ const store = createStore(
 );
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <Game />
   </Provider>,
   document.getElementById("root")
