@@ -1,5 +1,5 @@
 import React from "react";
-
+import Sky from "./Sky";
 const Canvas = () => {
   const style = {
     border: "1px solid black"
@@ -17,6 +17,7 @@ const Canvas = () => {
       viewBox={viewBox}
       id="game-canvas"
     >
+      <Sky />
       <circle cx={0} cy={0} r={50} />
     </svg>
   );
