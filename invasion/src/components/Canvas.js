@@ -5,6 +5,7 @@ import CannonPipe from "./CannonPipe";
 import CannonBase from "./CannonBase";
 import Bomb from "./Bomb";
 import Score from "./Score";
+import Saucer from "./Saucer";
 import PropTypes from "prop-types";
 const Canvas = props => {
   const style = {
@@ -35,6 +36,8 @@ const Canvas = props => {
       <CannonBase />
       <Bomb position={{ x: 0, y: -100 }} />
       <Score score={15} />
+      <Saucer position={{ x: -150, y: -300 }} />
+      <Saucer position={{ x: 150, y: -300 }} />
     </svg>
   );
 };
