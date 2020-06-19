@@ -26,6 +26,8 @@ class App extends Component {
       <div className="App">
         <Canvas
           angle={this.props.angle}
+          startGame={this.props.startGame}
+          gameState={this.props.gameState}
           trackMouse={e => {
             this.trackMouse(e);
           }}
@@ -37,6 +39,12 @@ class App extends Component {
 
 App.propTypes = {
   angle: PropTypes.number.isRequired,
-  moveObjects: PropTypes.func.isRequired
+  moveObjects: PropTypes.func.isRequired,
+  startGame: PropTypes.func.isRequired,
+  gameState: PropTypes.shape({
+    start: PropTypes.bool.isRequired,
+    kills: PropTypes.number.isRequired,
+    lives: PropTypes.number.isRequired
+  }).isRequired
 };
 export default App;
