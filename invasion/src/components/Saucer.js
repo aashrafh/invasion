@@ -2,13 +2,25 @@ import React from "react";
 import PropTypes from "prop-types";
 import SaucerBase from "./SaucerBase";
 import SaucerTop from "./SaucerTop";
-
+import styled, { keyframes } from "styled-components";
+const gameHeight = 1200;
+const moveVertically = keyframes`
+0% {
+  transform: translateY(0);
+}
+100% {
+  transfrom: translateY(${gameHeight}px);
+}
+`;
+const Move = styled.g`
+  animation: ${moveVertically} 4s linear;
+`;
 const Saucer = props => {
   return (
-    <g>
+    <Move>
       <SaucerBase position={props.position} />
       <SaucerTop position={props.position} />
-    </g>
+    </Move>
   );
 };
 Saucer.propTypes = {
