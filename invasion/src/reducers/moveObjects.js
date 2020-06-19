@@ -1,8 +1,11 @@
 import { calculateAngle } from "./../utils/formulas";
 import randomSaucer from "./randomSaucer";
+import moveBombs from "./moveBomb";
 function moveObjects(state, action) {
-  const mousePosition = action.mousePosition || { x: 0, y: 0 };
+  if (!state.gameState.start) return state;
 
+  let bombs = moveBombs(state.gameState.bombs);
+  const mousePosition = action.mousePosition || { x: 0, y: 0 };
   const newState = randomSaucer(state);
 
   const time = new Date().getTime();
@@ -15,10 +18,11 @@ function moveObjects(state, action) {
 
   return {
     ...newState,
-    // gameState: {
-    //   ...newState.gameState,
-    //   currentSaucers
-    // },
+    gameState: {
+      ...newState.gameState,
+      // currentSaucers: currentSaucers,
+      bombs
+    },
     angle
   };
 }
