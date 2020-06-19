@@ -13,14 +13,14 @@ const checkCollisions = (bombs, saucers) => {
       x1: position.x - 40,
       y1: position.y - 10,
       x2: position.x + 40,
-      y2: position + 10
+      y2: position.y + 10
     };
     bombs.forEach(bomb => {
       const b = {
         x1: bomb.position.x - 8,
         y1: bomb.position.y - 8,
         x2: bomb.position.x + 8,
-        y2: bomb.position + 8
+        y2: bomb.position.y + 8
       };
       if (checkCollision(a, b)) {
         detected.push({
