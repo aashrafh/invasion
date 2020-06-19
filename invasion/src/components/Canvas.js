@@ -45,14 +45,11 @@ const Canvas = props => {
           <GameTitle />
         </g>
       )}
-      {props.gameState.start && (
-        <g>
-          <Score score={15} />
-          <Saucer position={{ x: -150, y: -300 }} />
-          <Saucer position={{ x: 150, y: -300 }} />
-          <Heart position={{ x: -300, y: 15 }} />
-        </g>
-      )}
+      <Score score={15} />
+      <Heart position={{ x: -300, y: 15 }} />
+      {props.gameState.currentSaucers.map(saucer => (
+        <Saucer key={saucer.id} position={saucer.position} />
+      ))}
     </svg>
   );
 };
@@ -63,7 +60,16 @@ Canvas.propTypes = {
   gameState: PropTypes.shape({
     start: PropTypes.bool.isRequired,
     kills: PropTypes.number.isRequired,
-    lives: PropTypes.number.isRequired
+    lives: PropTypes.number.isRequired,
+    currentSaucers: PropTypes.arrayOf(
+      PropTypes.shape({
+        position: PropTypes.shape({
+          x: PropTypes.number.isRequired,
+          y: PropTypes.number.isRequired
+        }).isRequired,
+        id: PropTypes.number.isRequired
+      })
+    ).isRequired
   }).isRequired
 };
 export default Canvas;

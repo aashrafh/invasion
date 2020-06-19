@@ -44,7 +44,16 @@ App.propTypes = {
   gameState: PropTypes.shape({
     start: PropTypes.bool.isRequired,
     kills: PropTypes.number.isRequired,
-    lives: PropTypes.number.isRequired
+    lives: PropTypes.number.isRequired,
+    currentSaucers: PropTypes.arrayOf(
+      PropTypes.shape({
+        position: PropTypes.shape({
+          x: PropTypes.number.isRequired,
+          y: PropTypes.number.isRequired
+        }).isRequired,
+        id: PropTypes.number.isRequired
+      })
+    ).isRequired
   }).isRequired
 };
 export default App;

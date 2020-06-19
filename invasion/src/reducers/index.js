@@ -5,7 +5,9 @@ import { MOVE_OBJECTS, START_GAME } from "./../actions/index";
 const initialGameState = {
   start: false,
   lives: 3,
-  kills: 0
+  kills: 0,
+  currentSaucers: [],
+  lastSaucer: new Date()
 };
 const initialState = {
   angle: 45,
