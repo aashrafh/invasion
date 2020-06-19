@@ -4,6 +4,7 @@ import Ground from "./Ground";
 import CannonPipe from "./CannonPipe";
 import CannonBase from "./CannonBase";
 import Bomb from "./Bomb";
+import Score from "./Score";
 import PropTypes from "prop-types";
 const Canvas = props => {
   const style = {
@@ -23,11 +24,17 @@ const Canvas = props => {
       onMouseMove={props.trackMouse}
       id="game-canvas"
     >
+      <defs>
+        <filter id="shadow">
+          <feDropShadow dx="1" dy="1" stdDeviation="2" />
+        </filter>
+      </defs>
       <Sky />
       <Ground />
       <CannonPipe angle={props.angle} />
       <CannonBase />
       <Bomb position={{ x: 0, y: -100 }} />
+      <Score score={15} />
     </svg>
   );
 };
