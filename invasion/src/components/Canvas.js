@@ -6,6 +6,7 @@ import CannonBase from "./CannonBase";
 import Bomb from "./Bomb";
 import Score from "./Score";
 import Saucer from "./Saucer";
+import Heart from "./Heart";
 import PropTypes from "prop-types";
 const Canvas = props => {
   const style = {
@@ -38,6 +39,7 @@ const Canvas = props => {
       <Score score={15} />
       <Saucer position={{ x: -150, y: -300 }} />
       <Saucer position={{ x: 150, y: -300 }} />
+      <Heart position={{ x: -300, y: 15 }} />
     </svg>
   );
 };
