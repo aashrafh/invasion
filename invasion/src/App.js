@@ -4,11 +4,20 @@ import Canvas from "./components/Canvas";
 import { calculateCanvasPosition } from "./utils/formulas";
 class App extends Component {
   componentDidMount() {
+    this.resizeTheWindow();
     const self = this;
     setInterval(() => {
       self.props.moveObjects(self.canvasMousePosition);
     }, 10);
   }
+  resizeTheWindow = () => {
+    window.onresize = () => {
+      const canvas = document.getElementById("game-canvas");
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+    };
+    window.onresize();
+  };
   trackMouse(e) {
     this.canvasMousePosition = calculateCanvasPosition(e);
   }

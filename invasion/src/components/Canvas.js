@@ -1,4 +1,5 @@
 import React from "react";
+import GameTitle from "./GameTitle";
 import Sky from "./Sky";
 import Ground from "./Ground";
 import CannonPipe from "./CannonPipe";
@@ -7,16 +8,18 @@ import Bomb from "./Bomb";
 import Score from "./Score";
 import Saucer from "./Saucer";
 import Heart from "./Heart";
+import StartButton from "./StartButton";
 import PropTypes from "prop-types";
 const Canvas = props => {
   const style = {
     border: "1px solid black"
   };
+  const gameHight = 1200;
   const viewBox = [
     window.innerWidth / -2,
-    100 - window.innerHeight,
+    100 - gameHight,
     window.innerWidth,
-    window.innerHeight
+    gameHight
   ];
   return (
     <svg
@@ -40,6 +43,8 @@ const Canvas = props => {
       <Saucer position={{ x: -150, y: -300 }} />
       <Saucer position={{ x: 150, y: -300 }} />
       <Heart position={{ x: -300, y: 15 }} />
+      <StartButton />
+      <GameTitle />
     </svg>
   );
 };
