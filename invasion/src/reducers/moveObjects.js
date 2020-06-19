@@ -1,6 +1,7 @@
 import { calculateAngle } from "./../utils/formulas";
 import randomSaucer from "./randomSaucer";
 import moveBombs from "./moveBomb";
+import checkCollisions from "./checkCollision";
 function moveObjects(state, action) {
   if (!state.gameState.start) return state;
 
@@ -9,18 +10,23 @@ function moveObjects(state, action) {
   const newState = randomSaucer(state);
 
   const time = new Date().getTime();
-  const currentSaucers = newState.gameState.currentSaucers.filter(
-    saucer => time - saucer.createdAt < 4000
-  );
+  let currentSaucers = newState.gameState.currentSaucers.filter(saucer => true);
 
   const { x, y } = mousePosition;
   const angle = calculateAngle(0, 0, x, y);
 
+  const detected = checkCollisions(bombs, currentSaucers);
+  const detectedBombs = detected.map(obj => obj.bombId);
+  const detectedSaucers = detected.map(obj => obj.saucerId);
+  currentSaucers = currentSaucers.filter(saucer =>
+    detectedSaucers.indexOf(saucer.id)
+  );
+  bombs = bombs.filter(bomb => detectedBombs.indexOf(bomb.id));
   return {
     ...newState,
     gameState: {
       ...newState.gameState,
-      // currentSaucers: currentSaucers,
+      currentSaucers,
       bombs
     },
     angle
