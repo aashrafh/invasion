@@ -1,11 +1,12 @@
 import { calculateAngle } from "./../utils/formulas";
-
+import randomSaucer from "./randomSaucer";
 function moveObjects(state, action) {
-  if (!action.mousePosition) return state;
-  const { x, y } = action.mousePosition,
+  const mousePosition = action.mousePosition || { x: 0, y: 0 };
+  const { x, y } = mousePosition,
     angle = calculateAngle(0, 0, x, y);
+  const newState = randomSaucer(state);
   return {
-    ...state,
+    ...newState,
     angle
   };
 }
