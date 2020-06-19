@@ -2,7 +2,6 @@ import moveObjects from "./moveObjects";
 import startGame from "./startGame";
 import shoot from "./shoot";
 import { MOVE_OBJECTS, START_GAME, SHOOT } from "./../actions/index";
-import { act } from "react-dom/test-utils";
 
 const initialGameState = {
   start: false,

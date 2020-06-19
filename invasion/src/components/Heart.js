@@ -8,8 +8,6 @@ const Heart = props => {
     stroke: "#a51708",
     strokeWidth: "2px"
   };
-  const width = 40,
-    height = 25;
   const leftCurve = {
     startPoint: {
       x: props.position.x,

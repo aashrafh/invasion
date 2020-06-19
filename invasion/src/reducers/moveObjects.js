@@ -10,7 +10,9 @@ function moveObjects(state, action) {
   const newState = randomSaucer(state);
 
   const time = new Date().getTime();
-  let currentSaucers = newState.gameState.currentSaucers.filter(saucer => true);
+  let currentSaucers = newState.gameState.currentSaucers.filter(
+    saucer => time - saucer.createdAt < 4000
+  );
 
   const { x, y } = mousePosition;
   const angle = calculateAngle(0, 0, x, y);
@@ -26,8 +28,8 @@ function moveObjects(state, action) {
     ...newState,
     gameState: {
       ...newState.gameState,
-      currentSaucers,
-      bombs
+      currentSaucers: [...currentSaucers],
+      bombs: [...bombs]
     },
     angle
   };

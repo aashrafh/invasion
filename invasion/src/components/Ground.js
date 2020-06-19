@@ -20,7 +20,7 @@ const Ground = () => {
         height={height}
         style={style}
       />
-      <line x1={width / -2} y1={0} x2={width / 2} y1={0} style={separator} />
+      <line x1={width / -2} y1={0} x2={width / 2} y2={0} style={separator} />
     </g>
   );
 };

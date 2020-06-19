@@ -22,7 +22,7 @@ function randomSaucer(state) {
       x: saucerPosition,
       y: initialY
     },
-    createdAt: new Date().getTime,
+    createdAt: new Date().getTime(),
     id
   };
 
@@ -30,7 +30,7 @@ function randomSaucer(state) {
     ...state,
     gameState: {
       ...state.gameState,
-      currentSaucers: [...currentSaucers, saucer],
+      currentSaucers: [...state.gameState.currentSaucers, saucer],
       lastSaucer: new Date()
     }
   };
