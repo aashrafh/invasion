@@ -21,6 +21,9 @@ class App extends Component {
   trackMouse(e) {
     this.canvasMousePosition = calculateCanvasPosition(e);
   }
+  shoot = () => {
+    this.props.shoot(this.canvasMousePosition);
+  };
   render() {
     return (
       <div className="App">
@@ -31,6 +34,7 @@ class App extends Component {
           trackMouse={e => {
             this.trackMouse(e);
           }}
+          shoot={this.shoot}
         />
       </div>
     );
@@ -54,6 +58,7 @@ App.propTypes = {
         id: PropTypes.number.isRequired
       })
     ).isRequired
-  }).isRequired
+  }).isRequired,
+  shoot: PropTypes.func.isRequired
 };
 export default App;

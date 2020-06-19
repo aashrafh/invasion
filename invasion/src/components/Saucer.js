@@ -7,9 +7,10 @@ const gameHeight = 1200;
 const moveVertically = keyframes`
 0% {
   transform: translateY(0);
+ 
 }
 100% {
-  transfrom: translateY(${gameHeight}px);
+  transform: translateY(${gameHeight}px);
 }
 `;
 const Move = styled.g`

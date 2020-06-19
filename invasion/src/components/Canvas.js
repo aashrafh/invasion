@@ -27,6 +27,7 @@ const Canvas = props => {
       preserveAspectRatio="xMaxYMax none"
       viewBox={viewBox}
       onMouseMove={props.trackMouse}
+      onClick={props.shoot}
       id="game-canvas"
     >
       <defs>
@@ -36,9 +37,11 @@ const Canvas = props => {
       </defs>
       <Sky />
       <Ground />
+      {props.gameState.bombs.map(bomb => (
+        <Bomb key={bomb.id} position={bomb.position} />
+      ))}
       <CannonPipe angle={props.angle} />
       <CannonBase />
-      <Bomb position={{ x: 0, y: -100 }} />
       {!props.gameState.start && (
         <g>
           <StartButton onClick={() => props.startGame()} />
@@ -70,6 +73,7 @@ Canvas.propTypes = {
         id: PropTypes.number.isRequired
       })
     ).isRequired
-  }).isRequired
+  }).isRequired,
+  shoot: PropTypes.func.isRequired
 };
 export default Canvas;
