@@ -36,12 +36,15 @@ function moveObjects(state, action) {
     detectedSaucers.indexOf(saucer.id)
   );
   bombs = bombs.filter(bomb => detectedBombs.indexOf(bomb.id));
+
+  const kills = state.gameState.kills + detectedSaucers.length;
   return {
     ...newState,
     gameState: {
       ...newState.gameState,
       currentSaucers: [...currentSaucers],
-      bombs: [...bombs]
+      bombs: [...bombs],
+      kills
     },
     angle
   };

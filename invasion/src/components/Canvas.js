@@ -56,7 +56,7 @@ const Canvas = props => {
           <GameTitle />
         </g>
       )}
-      <Score score={15} />
+      <Score score={props.gameState.kills} />
       {props.gameState.currentSaucers.map(saucer => (
         <Saucer key={saucer.id} position={saucer.position} />
       ))}
