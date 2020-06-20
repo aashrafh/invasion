@@ -3,9 +3,10 @@
  <img width=400px height=210px src="https://github.com/aashrafh/Invasion/blob/master/demo/logo.png" alt="SpaceTrippers logo"></a>
 </p>
 
-<p align="center"> 👽 Earth invasion game built using React, Redux, and SVG
+<p align="center"> 👽 Earth invasion game built using React, Redux, and SVG. <strong><a href="https://aashrafh.github.io/Invasion/" alt="try it now!">Try It!</a></strong>
     <br> 
 </p>
+
 <p align="center">
   <a href="https://github.com/aashrafh/Invasion/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/aashrafh/Invasion" /></a>
@@ -34,7 +35,7 @@
 - [Technology](#tech)
 
 ## 🧐 About <a name = "about"></a>
-A proof of concept project to get my hands dirty during learning Redux and SVG.
+A proof of concept project to get my hands dirty during learning Redux and SVG. You can try it [here](https://aashrafh.github.io/Invasion/).
 
 ## 🎥 Demo 
 <div name="demo" align="center" width=1189px>
