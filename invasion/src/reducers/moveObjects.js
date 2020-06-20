@@ -44,6 +44,8 @@ function moveObjects(state, action) {
       ...newState.gameState,
       currentSaucers: [...currentSaucers],
       bombs: [...bombs],
+      start,
+      lives,
       kills
     },
     angle
