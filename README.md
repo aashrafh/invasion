@@ -34,7 +34,7 @@
 - [Technology](#tech)
 
 ## 🧐 About <a name = "about"></a>
-A proof of concept project to get my hand dirty with Redux and SVG.
+A proof of concept project to get my hands dirty during learning Redux and SVG.
 
 ## 🎥 Demo 
 <div name="demo" align="center" width=1189px>
