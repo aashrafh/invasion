@@ -21,6 +21,14 @@ const Canvas = props => {
     window.innerWidth,
     gameHight
   ];
+  const lives = [];
+  for (let i = 0; i < props.gameState.lives; i++) {
+    const heart = {
+      x: -180 - i * 70,
+      y: 35
+    };
+    lives.push(<Heart position={heart} key={i} />);
+  }
   return (
     <svg
       style={style}
@@ -49,10 +57,10 @@ const Canvas = props => {
         </g>
       )}
       <Score score={15} />
-      <Heart position={{ x: -300, y: 15 }} />
       {props.gameState.currentSaucers.map(saucer => (
         <Saucer key={saucer.id} position={saucer.position} />
       ))}
+      {lives}
     </svg>
   );
 };

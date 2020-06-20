@@ -14,6 +14,18 @@ function moveObjects(state, action) {
     saucer => time - saucer.createdAt < 4000
   );
 
+  const penalty =
+    currentSaucers.length < newState.gameState.currentSaucers.length;
+  let lives = state.gameState.lives;
+  if (penalty) lives--;
+
+  const start = lives > 0;
+  if (!start) {
+    lives = 3;
+    bombs = [];
+    currentSaucers = [];
+  }
+
   const { x, y } = mousePosition;
   const angle = calculateAngle(0, 0, x, y);
 
