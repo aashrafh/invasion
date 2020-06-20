@@ -7,7 +7,7 @@
     <br> 
 </p>
 <p align="center">
-  <a href="https://github.com/aashrafh/SpaceTrippers/graphs/contributors" alt="Contributors">
+  <a href="https://github.com/aashrafh/Invasion/graphs/contributors" alt="Contributors">
         <img src="https://img.shields.io/github/contributors/aashrafh/Invasion" /></a>
   
    <a href="https://github.com/aashrafh/Invasion/issues" alt="Issues">
