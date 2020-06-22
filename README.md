@@ -35,7 +35,7 @@
 - [Technology](#tech)
 
 ## 🧐 About <a name = "about"></a>
-A proof of concept project to get my hands dirty during learning Redux and SVG. You can try it [here](https://aashrafh.github.io/Invasion/).
+👽 Earth invasion game built using React, Redux, and SVG. You can try it [here](https://aashrafh.github.io/Invasion/).
 
 ## 🎥 Demo 
 <div name="demo" align="center" width=1189px>
